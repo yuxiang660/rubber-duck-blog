@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     // edit below
-    title: `Gatsby Starter Personal Blog`,
-    author: `Kyle Matthews`,
+    title: `Rubber Duck Blog`,
+    author: `Yuxiang Wang`,
     description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://github.com/yuxiang660/rubber-duck-blog/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `yuxiang660`,
     },
   },
   plugins: [
