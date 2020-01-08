@@ -1,7 +1,7 @@
 ---
-path: /content/blog
+path: /content/blog/netlify
 date: 2020-01-08T05:26:48.543Z
-title: Hello from Netlify
-description: Hello from Netlify
+title: To Netlify foler
+description: To Netlify foler
 ---
-\# Hello from Netlify
+\# To Netlify foler
