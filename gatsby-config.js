@@ -4,7 +4,7 @@ module.exports = {
     title: `Rubber Duck Blog`,
     author: `Yuxiang Wang`,
     description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
-    siteUrl: `https://github.com/yuxiang660/rubber-duck-blog/`,
+    siteUrl: `https://rubber-duck-blog.netlify.com/`,
     social: {
       twitter: `yuxiang660`,
     },
