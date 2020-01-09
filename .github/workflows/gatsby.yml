@@ -3,8 +3,9 @@ name: Gatsby Publish
 on: [push]
 
 jobs:
-  build:
+  buil1d:
     runs-on: ubuntu-latest
-    - uses: enriikke/gatsby-gh-pages-action@v2
-      with:
+    steps:
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
           access-token: ${{ secrets.GITHUB_TOKEN }}
