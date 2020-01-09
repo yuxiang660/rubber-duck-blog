@@ -26,29 +26,33 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-15937d8c61201b221262.js"
+    "url": "webpack-runtime-a8b620146ddf20ee912a.js"
   },
   {
-    "url": "styles.1025963f4f2ec7abbad4.css"
+    "url": "styles.6231f9f28cd8b09f605c.css"
   },
   {
     "url": "styles-09a5e3ca99fcb23d790b.js"
   },
   {
-    "url": "commons-efad1d7bd9647f65c3c0.js"
+    "url": "commons-297c38123202abe5377a.js"
   },
   {
     "url": "netlify-identity-widget-1c6115fab6d9b5e015b4.js"
   },
   {
-    "url": "app-92985c4c3e8c2a473e21.js"
+    "url": "app-d54921e076532584915c.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-69ec7a64a3c3fa14f2ef.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "2697112eb258a7a040976f5c74d0a8bc"
+    "revision": "b3adeed00eb2f48c41d758e6a9286e13"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
   },
   {
     "url": "manifest.webmanifest",
@@ -71,12 +75,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^`), ``)
+  pathname = pathname.replace(new RegExp(`^/rubber-duck-blog`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-92985c4c3e8c2a473e21.js`))) {
+  if (!resources || !(await caches.match(`/rubber-duck-blog/app-d54921e076532584915c.js`))) {
     return await fetch(event.request)
   }
 
@@ -89,7 +93,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/rubber-duck-blog/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
