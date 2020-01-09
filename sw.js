@@ -26,33 +26,29 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-6883fe56722dfb4ee1f9.js"
+    "url": "webpack-runtime-76045271a1bf6d42283b.js"
   },
   {
-    "url": "styles.6231f9f28cd8b09f605c.css"
+    "url": "styles.1025963f4f2ec7abbad4.css"
   },
   {
-    "url": "styles-09a5e3ca99fcb23d790b.js"
+    "url": "styles-616b5a01794e9df74797.js"
   },
   {
-    "url": "commons-3d7b3033a80d61b0b161.js"
+    "url": "commons-fff25b58c54e3ad34737.js"
   },
   {
-    "url": "netlify-identity-widget-1c6115fab6d9b5e015b4.js"
+    "url": "netlify-identity-widget-7f8fd1021f5842b64463.js"
   },
   {
-    "url": "app-05d2e0658fee4423bf31.js"
+    "url": "app-ad38f90337dbbeca8b9b.js"
   },
   {
-    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-69ec7a64a3c3fa14f2ef.js"
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-2d4160bee8fcacdef467.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "10bd15d193d159f5266ddfdf6992d8e4"
-  },
-  {
-    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
-    "revision": "c355c8040c47a63bfb3360e4b7cb6553"
+    "revision": "f27aad437cdfff466ac8188cc26edac4"
   },
   {
     "url": "manifest.webmanifest",
@@ -75,12 +71,12 @@ const { NavigationRoute } = workbox.routing
 
 const navigationRoute = new NavigationRoute(async ({ event }) => {
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/rubber-duck-blog`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/rubber-duck-blog/app-05d2e0658fee4423bf31.js`))) {
+  if (!resources || !(await caches.match(`/app-ad38f90337dbbeca8b9b.js`))) {
     return await fetch(event.request)
   }
 
@@ -93,7 +89,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/rubber-duck-blog/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   return await caches.match(offlineShell)
 })
 
