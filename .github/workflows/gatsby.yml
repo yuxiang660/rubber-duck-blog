@@ -1,0 +1,10 @@
+name: Gatsby Publish
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    - uses: enriikke/gatsby-gh-pages-action@v2
+      with:
+          access-token: ${{ secrets.GITHUB_TOKEN }}
