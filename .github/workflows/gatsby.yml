@@ -3,12 +3,17 @@ name: Gatsby Publish
 on: [push]
 
 jobs:
-  buil1d:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: xmflsct/action-publish-gatsby@v1
-        with:
-          publishBranch: gh-pages
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: npm install and build and deploy
+        run: |
+          npm install
+          npm run build
+      - uses: peaceiris/actions-gh-pages@v2
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./public
           
